@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!--Image form which we will pick color-->
+
+
+    <!-- color name in Hexadecimal -->
+
+    <!-- show the picked color -->
+
+    <ImageView
+        android:id="@+id/pickColorImage"
+        android:layout_width="319dp"
+        android:layout_height="318dp"
+        android:contentDescription="Image to pick color"
+        android:scaleType="fitStart"
+        android:src="@drawable/gfg"
+        app:layout_constraintBottom_toTopOf="@+id/coloPicked_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/coloPicked_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick a color "
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/colorInHex"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickColorImage" />
+
+    <TextView
+        android:id="@+id/colorInHex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/fillColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coloPicked_tv" />
+
+    <View
+        android:id="@+id/fillColor"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/red_seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorInHex"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <SeekBar
+        android:id="@+id/red_seekBar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:max="255"
+        android:min="0"
+        android:thumbTint="@color/red"
+        android:progressTint="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/green_seekBar"
+        app:layout_constraintEnd_toStartOf="@+id/redNum_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/red_textView"
+        app:layout_constraintTop_toBottomOf="@+id/fillColor" />
+
+    <SeekBar
+        android:id="@+id/green_seekBar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:max="255"
+        android:min="0"
+        android:progressTint="@color/green"
+        android:thumbTint="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/blue_seekBar"
+        app:layout_constraintEnd_toStartOf="@+id/greenNum_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/green_textView"
+        app:layout_constraintTop_toBottomOf="@+id/red_seekBar" />
+
+    <SeekBar
+        android:id="@+id/blue_seekBar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:max="255"
+        android:min="0"
+        android:thumbTint="@color/blue"
+        android:progressTint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blueNum_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/blue_textView"
+        app:layout_constraintTop_toBottomOf="@+id/green_seekBar" />
+
+    <TextView
+        android:id="@+id/red_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="R"
+        android:textStyle="italic"
+        android:textColor="@color/red"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/green_textView"
+        app:layout_constraintEnd_toStartOf="@+id/red_seekBar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fillColor" />
+
+    <TextView
+        android:id="@+id/green_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="G"
+        android:textStyle="italic"
+        android:textColor="@color/green"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/blue_textView"
+        app:layout_constraintEnd_toStartOf="@+id/green_seekBar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/red_textView" />
+
+    <TextView
+        android:id="@+id/blue_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="B"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blue_seekBar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/green_textView" />
+
+    <TextView
+        android:id="@+id/redNum_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text=""
+        android:textColor="@color/red"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/greenNum_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/red_seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/fillColor" />
+
+
+    <TextView
+        android:id="@+id/greenNum_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text=""
+        android:textColor="@color/green"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/blueNum_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/green_seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/redNum_textView" />
+
+    <TextView
+        android:id="@+id/blueNum_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text=""
+        android:textColor="@color/blue"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/blue_seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/greenNum_textView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
